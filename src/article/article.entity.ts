@@ -1,5 +1,4 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { text } from 'express';
 
 @Entity()
 export class ArticleEntity {
@@ -9,7 +8,7 @@ export class ArticleEntity {
   @Column({ length: 32 })
   title: string;
 
-  @Column(text)
+  @Column({ length: 400 })
   content: string;
 
   @Column({ length: 32 })
@@ -30,6 +29,6 @@ export class ArticleEntity {
   @Column()
   likenum: number;
 
-  @Column({ length: 400 })
-  comment: string;
+  @Column({ length: 32 })
+  commentId: string;
 }
